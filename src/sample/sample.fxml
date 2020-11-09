@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <center>
+      <ImageView fx:id="currentFrame" />
+   </center>
+   <right>
+      <VBox alignment="CENTER_LEFT" spacing="10">
+         <padding>
+            <Insets left="10" right="20" />
+         </padding>
+         <ImageView fx:id="histogram" />
+         <Text text="Controls" />
+         <CheckBox fx:id="binary"   text="Show in binary scale" />
+         <CheckBox fx:id="grayscale"  text="Show in gray scale" />
+         <CheckBox fx:id="toggleFaceDetection"   text="enableFaceDetection" onAction="#toggleFaceCheck" />
+         <CheckBox fx:id="haarClassifier" onAction="#haarSelected" text="Haar Classifier"/>
+         <CheckBox fx:id="lbpClassifier" onAction="#lbpSelected" text="LBP Classifier"/>
+      </VBox>
+   </right>
+   <bottom>
+      <HBox alignment="CENTER">
+         <padding>
+            <Insets bottom="25" left="25" right="25" top="25" />
+         </padding>
+         <Button fx:id="button" alignment="center" onAction="#startCamera" text="Start camera" />
+      </HBox>
+   </bottom>
+</BorderPane>
