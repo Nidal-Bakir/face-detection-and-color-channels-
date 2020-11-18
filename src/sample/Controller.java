@@ -172,6 +172,7 @@ public class Controller {
                         // if the grayscale checkbox is selected, convert the image
                         Imgproc.cvtColor(frame, frame, Imgproc.COLOR_BGR2GRAY);
 
+
                     }
 
 
@@ -242,8 +243,10 @@ public class Controller {
             Core.normalize(hist_r, hist_r, 0, histImage.rows(), Core.NORM_MINMAX, -1, new Mat());
         }
 
+
         // effectively draw the histogram(s)
         for (int i = 1; i < histSize.get(0, 0)[0]; i++) {
+
             // B component or gray image
             Imgproc.line(histImage, new Point(bin_w * (i - 1), hist_h - Math.round(hist_b.get(i - 1, 0)[0])),
                     new Point(bin_w * (i), hist_h - Math.round(hist_b.get(i, 0)[0])), new Scalar(255, 0, 0), 2, 8, 0);
@@ -308,7 +311,7 @@ public class Controller {
         if (this.lbpClassifier.isSelected())
             this.lbpClassifier.setSelected(false);
 
-        this.checkboxSelection("resources/haarcascades/haarcascade_frontalface_alt.xml");
+        checkboxSelection("resources/haarcascades/haarcascade_frontalface_alt.xml");
     }
 
     /**
@@ -321,7 +324,7 @@ public class Controller {
         if (this.haarClassifier.isSelected())
             this.haarClassifier.setSelected(false);
 
-        this.checkboxSelection("resources/lbpcascades/lbpcascade_frontalface.xml");
+        checkboxSelection("resources/lbpcascades/lbpcascade_frontalface.xml");
     }
 
     /**
